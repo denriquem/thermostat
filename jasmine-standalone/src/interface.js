@@ -31,5 +31,13 @@ $('#powersaving-off').click(function() {
 
 function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
+    $('#temperature').attr('class', thermostat.energyUsage());
   };
+
+  $('#current-city').change(function() {
+    var city = $('#current-city').val();
+    $.get('api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=c90ae9f1a49ed11aae0fe36f59856cf2&units=metric', function(data) {
+      $('#current-temperature').text(data.main.temp)
+    });
+  });
 });
