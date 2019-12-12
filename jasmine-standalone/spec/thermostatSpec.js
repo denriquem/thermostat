@@ -73,10 +73,10 @@ describe('when power saving mode is on', function() {
   });
 });
 
-describe('displaying usage levels', function(){
-  describe('when the temperature is below 18 degrees', function(){
-    it('it is considered low-usage', function(){
-      for (var i = 0; i < 3; i++){
+describe('displaying usage levels', function() {
+  describe('when the temperature is below 18 degrees', function() {
+    it('it is considered low-usage', function() {
+      for (var i = 0; i < 3; i++) {
         thermostat.down();
       }
       expect(thermostat.energyUsage()).toEqual('low-usage');
@@ -89,15 +89,16 @@ describe('displaying usage levels', function(){
     });
   });
 
-  describe('when the temperature is anything else', function() {
+  describe('when the temperature is above 25', function() {
     it('it is considered high-usage', function() {
-      thermostat.powerSavingMode = false;
-      for (var i = 0; i < 6; i++) {
+      thermostat.switchPowerSavingModeOff();
+      for (var i = 0; i < 7; i++) {
         thermostat.up();
       }
+      console.log(thermostat.temperature);
+      console.log(thermostat.powerSavingMode);
       expect(thermostat.energyUsage()).toEqual('high-usage');
     });
-
   });
 });
 
