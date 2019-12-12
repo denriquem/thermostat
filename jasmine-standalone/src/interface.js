@@ -13,19 +13,19 @@ $('#temp-down').click(function() {
 });
 
 $('#temp-reset').click(function() {
-  thermostat.reset();
+  thermostat.resetTemperature();
   updateTemperature();
 });
 
-$('#psm-on').click(function() {
-  thermostat.powerSavingModeOn();
-  $('#power-saving').text('on')
+$('#powersaving-on').click(function() {
+  thermostat.switchPowerSavingModeOn();
+  $('#powersaving-on').text('on')
   updateTemperature();
 });
 
-$('#psm-off').click(function() {
-    thermostat.powerSavingModeOff();
-    $('#power-saving').text('off')
+$('#powersaving-off').click(function() {
+    thermostat.switchPowerSavingModeOff();
+    $('#powersaving-off').text('off')
     updateTemperature();
 });
 
