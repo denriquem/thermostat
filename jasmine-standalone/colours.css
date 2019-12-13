@@ -2,6 +2,10 @@
   color: green;
 }
 
+body {
+  background-image: url("https://cdn.mos.cms.futurecdn.net/deaceNXy23NF8VsCrwZPgn-1200-80.jpg");
+}
+
 .medium-usage {
   color: black;
 }
@@ -10,6 +14,34 @@
   color: red;
 }
 
+#temp-up {
+  width: 40px;
+  margin: 40px auto;
+}
+
 #main {
-  background-color: purple;
+  max-width: 600px;
+  margin: 0 auto;
+  padding; 10px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+  position: relative;
+  top: -20px;
+  left: 20px;
+      }
+
+#thermostat {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+#current-temperature {
+  margin: 0 auto;
+  padding; 50px;
+  }
+
+#temperature {
+  text-align: center;
 }
