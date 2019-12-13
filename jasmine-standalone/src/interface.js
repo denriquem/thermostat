@@ -34,9 +34,10 @@ function updateTemperature() {
     $('#temperature').attr('class', thermostat.energyUsage());
   };
 
-  $('#current-city').change(function() {
-    var city = $('#current-city').val();
-    $.get('api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=c90ae9f1a49ed11aae0fe36f59856cf2&units=metric', function(data) {
+  $('#City').change(function() {
+    event.preventDefault();
+    var city = $('#City').val();
+    $.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c90ae9f1a49ed11aae0fe36f59856cf2&units=metric`, function(data) {
       $('#current-temperature').text(data.main.temp)
     });
   });
